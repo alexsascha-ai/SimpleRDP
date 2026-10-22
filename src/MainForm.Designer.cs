@@ -55,7 +55,7 @@ namespace SimpleRDP {
             // checkBoxKeepOpening
             // 
             this.checkBoxKeepOpening.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.checkBoxKeepOpening.Location = new System.Drawing.Point(13, 387);
+            this.checkBoxKeepOpening.Location = new System.Drawing.Point(13, 386);
             this.checkBoxKeepOpening.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxKeepOpening.Name = "checkBoxKeepOpening";
             this.checkBoxKeepOpening.Size = new System.Drawing.Size(340, 24);
@@ -67,12 +67,12 @@ namespace SimpleRDP {
             // checkBoxRedirectionWarning
             // 
             this.checkBoxRedirectionWarning.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.checkBoxRedirectionWarning.Location = new System.Drawing.Point(13, 413);
+            this.checkBoxRedirectionWarning.Location = new System.Drawing.Point(13, 412);
             this.checkBoxRedirectionWarning.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxRedirectionWarning.Name = "checkBoxRedirectionWarning";
             this.checkBoxRedirectionWarning.Size = new System.Drawing.Size(340, 24);
             this.checkBoxRedirectionWarning.TabIndex = 20;
-            this.checkBoxRedirectionWarning.Text = "Classic RDP warning dialog (RedirectionWarningDialogVersion = 1)";
+            this.checkBoxRedirectionWarning.Text = "Classic RDP warning dialog";
             this.checkBoxRedirectionWarning.UseVisualStyleBackColor = true;
             this.checkBoxRedirectionWarning.CheckedChanged += new System.EventHandler(this.checkBoxRedirectionWarning_CheckedChanged);
             // 
