@@ -165,6 +165,33 @@ namespace SimpleRDP {
 
         [JsonIgnore] public bool JustAdded { get; set; } = false;
 
+        public Profile Clone() {
+            var clone = new Profile {
+                Name = (this._name == "" ? "<New Profile>" : this._name) + " (Copy)",
+                Computer = this.Computer,
+                Username = this.Username,
+                EncryptedPassword = this.EncryptedPassword,
+                Domain = this.Domain,
+                JustAdded = true,
+            };
+
+            if (!string.IsNullOrEmpty(this.Filename) && File.Exists(this.Filename)) {
+                while (true) {
+                    string newFile = Config.rdpDir + "\\" + StringUtil.GenerateName(8) + ".rdp";
+                    if (!File.Exists(newFile)) {
+                        try {
+                            File.Copy(this.Filename, newFile);
+                            clone.Filename = newFile;
+                        } catch {
+                        }
+                        break;
+                    }
+                }
+            }
+
+            return clone;
+        }
+
         public void Delete() {
             try {
                 File.Delete(Filename);

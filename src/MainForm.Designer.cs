@@ -35,6 +35,7 @@ namespace SimpleRDP {
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonNew = new System.Windows.Forms.Button();
+            this.buttonClone = new System.Windows.Forms.Button();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.textBoxDomain = new System.Windows.Forms.TextBox();
@@ -150,11 +151,23 @@ namespace SimpleRDP {
             this.buttonNew.Location = new System.Drawing.Point(13, 351);
             this.buttonNew.Margin = new System.Windows.Forms.Padding(4);
             this.buttonNew.Name = "buttonNew";
-            this.buttonNew.Size = new System.Drawing.Size(103, 28);
+            this.buttonNew.Size = new System.Drawing.Size(67, 28);
             this.buttonNew.TabIndex = 9;
             this.buttonNew.Text = "New";
             this.buttonNew.UseVisualStyleBackColor = true;
             this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
+            // 
+            // buttonClone
+            // 
+            this.buttonClone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonClone.Location = new System.Drawing.Point(85, 351);
+            this.buttonClone.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonClone.Name = "buttonClone";
+            this.buttonClone.Size = new System.Drawing.Size(67, 28);
+            this.buttonClone.TabIndex = 10;
+            this.buttonClone.Text = "Clone";
+            this.buttonClone.UseVisualStyleBackColor = true;
+            this.buttonClone.Click += new System.EventHandler(this.buttonClone_Click);
             // 
             // textBoxUsername
             // 
@@ -218,10 +231,10 @@ namespace SimpleRDP {
             // buttonDelete
             // 
             this.buttonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonDelete.Location = new System.Drawing.Point(124, 351);
+            this.buttonDelete.Location = new System.Drawing.Point(157, 351);
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(100, 28);
+            this.buttonDelete.Size = new System.Drawing.Size(67, 28);
             this.buttonDelete.TabIndex = 15;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
@@ -312,6 +325,7 @@ namespace SimpleRDP {
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.buttonClone);
             this.Controls.Add(this.buttonNew);
             this.Controls.Add(this.buttonConnect);
             this.Controls.Add(this.buttonAbout);
@@ -357,6 +371,7 @@ namespace SimpleRDP {
         private System.Windows.Forms.TextBox textBoxDomain;
 
         private System.Windows.Forms.Button buttonNew;
+        private System.Windows.Forms.Button buttonClone;
 
         private System.Windows.Forms.TextBox textBoxComputer;
         private System.Windows.Forms.Label label1;

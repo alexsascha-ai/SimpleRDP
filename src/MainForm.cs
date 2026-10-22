@@ -119,6 +119,7 @@ namespace SimpleRDP {
         public bool EditMode {
             get => _editMode;
             set {
+                _editMode = value;
                 buttonEdit.Visible = !value;
                 buttonSave.Visible = value;
                 buttonCancel.Visible = value;
@@ -233,6 +234,18 @@ namespace SimpleRDP {
 
         private void buttonNew_Click(object sender, EventArgs e) {
             AddNewProfile();
+        }
+
+        private void buttonClone_Click(object sender, EventArgs e) {
+            var selected = GetSelectedProfile();
+            if (selected == null) {
+                return;
+            }
+
+            var clone = selected.Clone();
+            _config.Profiles.Add(clone);
+            listBox.SelectedIndex = _config.Profiles.Count - 1;
+            SelectProfile(true);
         }
 
         private void buttonDelete_Click(object sender, EventArgs e) {
