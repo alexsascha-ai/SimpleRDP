@@ -29,14 +29,20 @@ namespace SimpleRDP {
             }
             
             if (_instance.Profiles == null) {
-                _instance.Profiles = new BindingList<Profile>();
+                _instance.Profiles = new List<Profile>();
                 _instance.Save();
+            }
+
+            foreach (var item in _instance.Profiles) {
+                if (item.IsGroup && item.Children == null) {
+                    item.Children = new List<Profile>();
+                }
             }
 
             return _instance;
         }
 
-        public BindingList<Profile> Profiles { get; set; }
+        public List<Profile> Profiles { get; set; } = new List<Profile>();
 
         public bool KeepOpening { get; set; } = true;
 

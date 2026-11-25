@@ -11,6 +11,7 @@ Windows comes with a built-in Remote Desktop app, but it makes managing multiple
 ## Features
 
 - **Portable**: Just one `.exe` file—no installation required. Copy the folder to a USB drive or another PC and all your connections and passwords come with you.
+- **Movable & Groupable List**: Organize connections into collapsible groups (`+` / `-`) and freely reorder items or move them in and out of groups using drag and drop.
 - **Saved Passwords**: Save your login details once and connect with a double-click.
 - **Native Windows Remote Desktop**: Uses the standard Windows Remote Desktop client under the hood, so your sessions work and feel exactly the same.
 - **Quick Cloning**: Duplicate an existing connection with a single click using the **Clone** button.
@@ -26,20 +27,26 @@ Windows comes with a built-in Remote Desktop app, but it makes managing multiple
 2. Type a **Name** for the connection at the top right, then fill in the **Computer** address, **User name**, **Password**, and **Domain** (optional).
 3. Click **Save**.
 
-### 2. Clone a Connection
+### 2. Organize with Groups & Drag and Drop
+1. Click **Group** (or right-click the list and choose **New Group**), type a name, and click **Save**.
+2. Drag and drop any connection onto a group to place it inside, drag it out to the main list, or drag connections and groups up and down to reorder them.
+3. Click the **+** / **-** button next to a group to expand or collapse it (the open/closed state is saved automatically).
+4. Deleting a group safely moves its connections back to the main list instead of deleting them.
+
+### 3. Clone a Connection
 1. Click on a connection in the list.
 2. Click **Clone** to make a copy of it, change the name or address, and click **Save**.
 
-### 3. Connect
+### 4. Connect
 - Double-click any connection in the list, or select it and click **Connect**.
 - Check **Keep opening SimpleRDP** if you want SimpleRDP to stay open after you close your remote session.
 
-### 4. Change Screen Resolution or More Settings
+### 5. Change Screen Resolution or More Settings
 1. Select a connection and click **Options**.
 2. The standard Windows Remote Desktop settings window will open.
 3. Change any settings you want (such as display size, sound, or shared folders), then click **Save** inside that window and close it.
 
-### 5. Backup Your Connections
+### 6. Backup Your Connections
 - Simply copy the entire SimpleRDP folder (`SimpleRDP.exe`, `config.json`, and the `rdp-files` folder) to your backup drive or another computer.
 
 ---

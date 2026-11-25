@@ -163,6 +163,9 @@
           <DependentUpon>About.cs</DependentUpon>
         </Compile>
         <Compile Include="src\Config.cs" />
+        <Compile Include="src\DraggableTreeView.cs">
+          <SubType>Component</SubType>
+        </Compile>
         <Compile Include="src\MainForm.cs">
           <SubType>Form</SubType>
         </Compile>

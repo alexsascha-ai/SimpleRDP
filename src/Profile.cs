@@ -11,17 +11,30 @@ namespace SimpleRDP {
 
         public string Name {
             get {
-                if (_name == "") {
-                    return "<New Profile>";
+                if (string.IsNullOrEmpty(_name)) {
+                    return IsGroup ? "<New Group>" : "<New Profile>";
                 }
                 return _name;
             }
-            set => _name = value;
+            set => _name = value ?? "";
         }
 
+        public bool IsGroup { get; set; } = false;
+        public bool IsExpanded { get; set; } = true;
+        public List<Profile> Children { get; set; } = new List<Profile>();
+
+        public bool ShouldSerializeIsGroup() => IsGroup;
+        public bool ShouldSerializeIsExpanded() => IsGroup;
+        public bool ShouldSerializeChildren() => IsGroup;
+        public bool ShouldSerializeFilename() => !IsGroup;
+        public bool ShouldSerializeComputer() => !IsGroup;
+        public bool ShouldSerializeUsername() => !IsGroup;
+        public bool ShouldSerializeEncryptedPassword() => !IsGroup;
+        public bool ShouldSerializeDomain() => !IsGroup;
+
         public string Filename { get; set; } = "";
-        public string Computer { get; set; }
-        public string Username { get; set; }
+        public string Computer { get; set; } = "";
+        public string Username { get; set; } = "";
 
         /**
          * Encrypted Password used by mstsc.exe
@@ -47,9 +60,13 @@ namespace SimpleRDP {
             set => EncryptedPassword = value.Encrypt();
         }
 
-        public string Domain { get; set; }
+        public string Domain { get; set; } = "";
 
         public void PrepareRdpFile() {
+            if (IsGroup) {
+                return;
+            }
+
             var justCreated = false;
 
             if (Filename == null || Filename == "") {
@@ -193,6 +210,9 @@ namespace SimpleRDP {
         }
 
         public void Delete() {
+            if (IsGroup || string.IsNullOrEmpty(Filename)) {
+                return;
+            }
             try {
                 File.Delete(Filename);
             } catch (Exception ex) {
